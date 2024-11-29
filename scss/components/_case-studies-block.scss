@@ -1,0 +1,35 @@
+@use "../tools";
+
+.case-studies-block {
+  background-color: tools.$color-dark;
+  border-radius: 45px;
+  display: flex;
+  padding: 60px 70px;
+
+  & hr {
+    border: 0.5px solid tools.$color-base;
+    height: 186px;
+    //width: 1px;
+    margin: auto 64px;
+  }
+
+  //& .special-elem {
+  //  border-left: 1px solid tools.$color-base;
+  //  border-right: 1px solid tools.$color-base;
+  //}
+
+  & .block-description {
+    color: tools.$color-base;
+    @include tools.size-line-height(1.125rem);
+    padding-bottom: 20px;
+  }
+
+  & .block-link {
+    color: tools.$color-accent;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}

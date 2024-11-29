@@ -1,0 +1,128 @@
+@use "../tools";
+
+footer {
+  display: grid;
+  background-color: tools.$color-dark;
+  border-top-right-radius: 45px;
+  border-top-left-radius: 45px;
+  padding-top: 50px;
+  padding-right: clamp(1.25rem, 3.96vw + 0.186rem, 3.75rem);
+  padding-left: clamp(1.25rem, 3.96vw + 0.186rem, 3.75rem);
+  grid-template-areas:
+  "logo navigation social"
+  "contact contact contact"
+  "rights rights rights";
+  //grid-template-columns: max-content;
+
+  & .logotype {
+    grid-area: logo;
+  }
+
+  & ul {
+    grid-area: navigation;
+    display: flex;
+    //gap: 40px;
+    gap: clamp(20px, 1.98vw + 0.718rem, 40px);
+
+    & .footer-link {
+      @include tools.size-line-height(1.125rem);
+      color: tools.$color-base;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  & .footer-social-icons {
+    grid-area: social;
+    gap: 20px;
+    display: flex;
+
+    & img {
+      width: 30px;
+    }
+  }
+
+  & .footer-block-contact {
+    grid-area: contact;
+    display: flex;
+    justify-content: space-between;
+    margin-top: clamp(2.313rem, 2.871vw + 1.541rem, 4.125rem);
+
+    & .contact-info {
+
+      & h4 {
+        display: inline-block;
+        @include tools.size-line-height(1.25rem);
+        font-family: "Space Grotesk Medium";
+        background-color: tools.$color-accent;
+        border-radius: 7px;
+        padding-left: 7px;
+        padding-right: 7px;
+        margin-bottom: 27px;
+      }
+
+      & p {
+        @include tools.size-line-height(1.125rem);
+        color: tools.$color-base;
+        &:nth-of-type(1){
+          padding-bottom: clamp(15px, 0.495vw + 0.804rem, 20px);
+        }
+        &:nth-of-type(2){
+          padding-bottom: clamp(15px, 0.495vw + 0.804rem, 20px);
+
+        }
+      }
+
+
+    }
+
+    & form {
+      //grid-area: form;
+      background-color: #292a32;
+      border-radius: 14px;
+      padding: clamp(1.875rem, 2.772vw + 1.13rem, 3.625rem) clamp(1.875rem, 0.99vw + 1.609rem, 2.5rem);
+      max-width: 635px;
+
+      & input {
+        @include tools.size-line-height(1.125rem);
+        padding: 22px clamp(1.563rem, 0.99vw + 1.296rem, 2.188rem);
+        color: tools.$color-base;
+        background: none;
+        border: 1px solid tools.$color-base;
+        border-radius: 14px;
+
+        &::placeholder {
+          color: tools.$color-base;
+        }
+      }
+
+      & button {
+        @include tools.basic-button
+      }
+    }
+  }
+
+  & div {
+    grid-area: rights;
+
+    & hr {
+      //grid-area: line;
+      border: 0.5px solid tools.$color-base;
+      width: clamp(24.375rem, 72.277vw + 4.95rem, 70rem);
+      margin: 50px auto;
+    }
+
+    & p {
+      font-size: 1.125rem;
+      line-height: 28px;
+      color: tools.$color-base;
+
+      & a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,86 @@
+@use "../tools";
+
+
+.contact-block {
+  height: clamp(33.75rem, 23.069vw + 27.55rem, 48.313rem);
+  display: flex;
+  justify-content: space-between;
+  background-color: tools.$color-light;
+  border-radius: 45px;
+  padding-top: clamp(2.5rem, 1.98vw + 1.968rem, 3.75rem);
+  padding-left: clamp(1.875rem, 6.931vw + 0.012rem, 6.25rem);
+
+  & form {
+    width: clamp(20.625rem, 22.376vw + 14.611rem, 34.75rem);
+
+    & .purpose {
+      display: flex;
+      align-items: center;
+
+      & input[type='radio'] {
+        appearance: none;
+        background-color: tools.$color-base;
+        border: 1px solid tools.$color-font;
+        border-radius: 50%;
+        box-shadow: 0 0 0 6px tools.$color-base inset;
+        width: 28px;
+        height: 28px;
+
+        &:checked {
+          background-color: tools.$color-accent;
+          border-width: 1px;
+        }
+      }
+
+      & label {
+        @include tools.size-line-height(1.125rem);
+        padding-left: 14px;
+        padding-right: 35px;
+      }
+    }
+
+    & .fields {
+      display: flex;
+      flex-direction: column;
+      margin-top: clamp(2.25rem, 0.396vw + 2.144rem, 2.5rem);
+
+      & label {
+        font-size: 1.125rem;
+        line-height: 1.75;
+        margin-top: clamp(1.25rem, 0.495vw + 1.117rem, 1.563rem);
+        padding-bottom: 5px;
+
+      }
+
+      & input {
+        @include tools.size-line-height(1.125rem);
+        border: 1px solid tools.$color-font;
+        border-radius: 14px;
+        padding: 18px clamp(1.25rem, 0.99vw + 0.984rem, 1.875rem);
+
+        &:focus {
+          outline: 1px solid tools.$color-accent;
+        }
+      }
+
+      & #message {
+        margin-bottom: clamp(1.875rem, 13.663vw - 0.547rem, 7.5rem);
+      }
+
+    }
+
+    & button {
+      @include tools.basic-button;
+      background-color: tools.$color-dark;
+      width: 100%;
+      color: tools.$color-base;
+      position: relative;
+      top: calc(-3.96vw + 6.064rem);
+    }
+
+  }
+
+  & img {
+    max-height: 649px;
+  }
+}

@@ -1,0 +1,148 @@
+@use "../tools";
+
+.testimonials-block {
+  background: tools.$color-dark;
+  border-radius: 45px;
+  height: clamp(34.625rem, 7.03vw + 32.736rem, 39.063rem);
+  position: relative;
+  overflow: hidden;
+
+  & .testimonials-block-list {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+    transform: translateX(0); /* Initial position */
+
+      justify-content: center; /* Center the cards horizontally */
+      align-items: center; /* Center the cards vertically */
+
+    & .testimonials-block-card {
+      flex: 0 0 80%; /* Each card occupies the full width of the container */
+      box-sizing: border-box;
+      width: clamp(20.625rem, 27.327vw + 13.281rem, 37.875rem);
+      //margin: 0 auto;
+      //gap
+
+      & .bubble {
+        position: relative;
+
+        & .testimonial {
+          @include tools.size-line-height(1.125rem);
+          color: tools.$color-base;
+          background-color: tools.$color-dark;
+          border: 1px solid tools.$color-accent;
+          border-radius: 45px;
+          position: absolute;
+          top: clamp(1.875rem, 5.347vw + 0.438rem, 5.25rem);
+          padding: clamp(1.875rem, 2.178vw + 1.29rem, 3.25rem);
+
+          &:before {
+            position: absolute;
+            width: 39px;
+            height: 39px;
+            bottom: -20px;
+            left: 64px;
+            transform: rotate(45deg);
+            border-right: 1px solid tools.$color-accent;
+            border-bottom: 1px solid tools.$color-accent;
+            background-color: tools.$color-dark;
+            content: '';
+          }
+        }
+
+        & .testimonial-person {
+          position: absolute;
+          //bottom: ;
+          top: clamp(23.563rem, -0.693vw + 23.749rem, 23.125rem);
+          left: 80px;
+
+          & .title {
+            font-family: "Space Grotesk Medium";
+            @include tools.size-line-height(1.25rem);
+            color: tools.$color-accent;
+          }
+
+          & .subtitle {
+            @include tools.size-line-height(1.125rem);
+            color: tools.$color-base;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  & .testimonials-block-navigation {
+    position: absolute;
+    bottom: clamp(3.75rem, 0.792vw + 3.537rem, 4.25rem);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+//
+//.testimonials-container {
+//  position: relative;
+//  overflow: hidden;
+//  width: 100%; /* Set your desired width */
+//  height: 300px; /* Set your desired height */
+//}
+//
+//.testimonials-slider {
+//  display: flex;
+//  transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+//  transform: translateX(0); /* Initial position */
+//}
+//
+//.testimonials-block-card {
+//  flex: 0 0 100%; /* Each card occupies the full width of the container */
+//  box-sizing: border-box;
+//  text-align: center;
+//  background: #f0f0f0; /* Example background */
+//  padding: 20px;
+//  font-size: 20px;
+//  line-height: 300px; /* Vertically center the text */
+//}
+//
+//<div class="testimonials-container">
+//<div class="testimonials-slider">
+//<div class="testimonials-block-card">Slide 1</div>
+//<div class="testimonials-block-card">Slide 2</div>
+//<div class="testimonials-block-card">Slide 3</div>
+//<!-- Add more slides if needed -->
+//</div>
+//</div>
+//<button class="prev">Previous</button>
+//<button class="next">Next</button>
+
+//
+//.testimonials-container {
+//  position: relative;
+//  overflow: hidden;
+//  width: 100%; /* Full width container */
+//  height: 300px; /* Adjust height as needed */
+//  display: flex; /* Use flexbox to center the slider */
+//  justify-content: center; /* Center the cards horizontally */
+//  align-items: center; /* Center the cards vertically */
+//}
+//
+//.testimonials-slider {
+//  display: flex;
+//  gap: 10%; /* Add spacing between slides */
+//  transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+//  transform: translateX(0); /* Initial position */
+//}
+//
+//.testimonials-block-card {
+//  flex: 0 0 80%; /* Each card takes up 80% of the container width */
+//  box-sizing: border-box;
+//  text-align: center;
+//  background: #f0f0f0; /* Example background */
+//  padding: 20px;
+//  font-size: 20px;
+//  line-height: 300px; /* Vertically center the text */
+//  border-radius: 10px; /* Optional for rounded edges */
+//  margin: auto; /* Center horizontally */
+//}

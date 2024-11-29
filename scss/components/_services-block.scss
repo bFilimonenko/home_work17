@@ -1,0 +1,70 @@
+@use "../tools";
+
+.services-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: clamp(4.375rem, 2.941vw + 3.585rem, 6.25rem);
+
+  & .service-block-card {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    height: 310px;
+    padding: 50px;
+    border: 1px solid tools.$color-dark;
+    border-radius: 45px;
+    box-shadow: 0 5px 0 0 tools.$color-dark;
+
+    &.light {
+      background-color: tools.$color-light;
+    }
+
+    &.dark {
+      background-color: tools.$color-dark;
+
+      & span.special {
+        color: tools.$color-base;
+      }
+    }
+
+    &.bright {
+      background-color: tools.$color-accent;
+    }
+
+    & .content {
+      display: flex;
+      flex-direction: column;
+
+      & h3 {
+        font-family: "Space Grotesk Medium";
+        @include tools.size-line-height(1.875rem);
+
+        &.accent span {
+          background-color: tools.$color-accent;
+          border-radius: 7px;
+          padding: 0 7px;
+        }
+        &.base span {
+          background-color: tools.$color-base;
+          border-radius: 7px;
+          padding: 0 7px;
+        }
+      }
+
+      & a {
+        margin-top: 93px;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+      }
+    }
+
+    & .illustration {
+      margin-left: 69px;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@use "../tools";
+
+.process-block {
+  display: grid;
+  gap: 30px;
+
+  & .process-block-card {
+    display: flex;
+    flex-direction: column;
+    padding: 41px 60px;
+    background-color: tools.$color-light;
+    border: 1px solid tools.$color-dark;
+    border-radius: 45px;
+    box-shadow: 0 5px 0 0 tools.$color-dark;
+
+    & .card-header {
+      display: flex;
+      align-items: center;
+
+      & .card-number {
+        font-family: "Space Grotesk Medium";
+        font-size: clamp(1.875rem, 1.0767rem + 2.9703vw, 3.75rem);
+        line-height: 1.276;
+      }
+
+      & .card-title {
+        font-family: "Space Grotesk Medium";
+        @include tools.size-line-height(1.875rem);
+        padding-left: 25px;
+      }
+    }
+
+    & .accordion-button {
+      position: absolute;
+      align-self: end;
+      width: 58px;
+      height: 58px;
+      border-radius: 30px;
+      background-image: url("../../icons/plus-icon.svg");
+    }
+
+    & .accordion-button.active {
+      background-image: url("../../icons/minus-icon.svg");
+    }
+
+    & .accordion-description {
+      display: none;
+      font-size: 1.125rem;
+
+      & hr {
+        border: 0.5px solid tools.$color-font;
+        width: clamp(20.75rem, 77.624vw - 0.111rem, 69.75rem);
+        margin: 30px auto;
+      }
+    }
+  }
+
+  .process-block-card:has(> .accordion-button.active) {
+    background-color: #b9ff66;
+  }
+}

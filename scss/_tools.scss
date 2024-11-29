@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "Space Grotesk Light";
+  src: url("../fonts/SpaceGrotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Grotesk Regular";
+  src: url("../fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Grotesk Medium";
+  src: url("../fonts/SpaceGrotesk-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Grotesk SemiBold";
+  src: url("../fonts/SpaceGrotesk-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Grotesk Bold";
+  src: url("../fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+$mainFont: "Space Grotesk Regular";
+$fontSize: 16px;
+
+//Colors
+$color-font: #000000;
+$color-base: #ffffff;
+$color-accent: #b9ff66;
+$color-dark: #191a23;
+$color-light: #f3f3f3;
+
+body {
+  font-family: $mainFont;
+  font-size: 16px;
+  //padding: clamp(1.875rem, 2.941vw + 1.085rem, 3.75rem) clamp(1.25rem, 7.843vw - 0.858rem, 6.25rem);
+}
+
+.wrapper {
+  width: clamp(24.375rem, 100vw - 2.5rem, 117.5rem);
+  display: block;
+  margin: 0 auto;
+  padding: clamp(30px, 2.941vw + 1.085rem, 60px) clamp(1.25rem, 5.941vw - 0.347rem, 5rem) 0;
+}
+
+//Typography Desktop
+
+@mixin size-line-height($fontSize) {
+  font-size: $fontSize;
+  line-height: $fontSize * 1.276;
+}
+
+.subheading {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: clamp(3.75rem, 7.921vw + 1.621rem, 8.75rem);
+  margin-bottom: clamp(2.5rem, 3.96vw + 1.436rem, 5rem);
+
+  h2 {
+    font-family: "Space Grotesk Medium";
+    @include size-line-height(2.5rem);
+    display: inline-block;
+    padding: 0 7px;
+    background-color: $color-accent;
+    border-radius: 7px;
+  }
+
+  p {
+    @include size-line-height(1.125rem);
+    max-width: 580px;
+  }
+}
+
+@mixin basic-button {
+  font-family: $mainFont;
+  padding: 20px 35px 20px 35px;
+  border-radius: 14px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  text-align: center;
+}
+//
+//button:not([class]) {
+//  padding: 20px 35px 20px 35px;
+//  border-radius: 14px;
+//  font-size: 1.25rem;
+//  line-height: 1.75rem;
+//}

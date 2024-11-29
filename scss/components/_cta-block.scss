@@ -1,0 +1,42 @@
+@use "../tools";
+
+article {
+  display: flex;
+
+
+  & section {
+    background-color: tools.$color-light;
+    border-radius: 45px;
+    padding: 60px;
+    width: 100%;
+    margin: 23.5px 0;
+
+    & div {
+      max-width: clamp(18.125rem, 20.588vw + 12.592rem, 31.25rem);
+
+      & h3 {
+        font-family: "Space Grotesk Medium";
+        @include tools.size-line-height(1.875rem);
+        margin-bottom: 26px;
+      }
+
+      & p {
+        @include tools.size-line-height(1.125rem);
+        margin-bottom: 26px;
+      }
+
+      & button {
+        @include tools.basic-button;
+        border: none;
+        background-color: tools.$color-dark;
+        color: tools.$color-base;
+      }
+
+    }
+  }
+
+  & img {
+    position: absolute;
+    right: 100px;
+  }
+}
