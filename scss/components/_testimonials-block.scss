@@ -3,27 +3,26 @@
 .testimonials-block {
   background: tools.$color-dark;
   border-radius: 45px;
-  height: clamp(34.625rem, 7.03vw + 32.736rem, 39.063rem);
+  height: clamp(554px, 7.03vw + 32.736rem, 625px);
   position: relative;
   overflow: hidden;
 
   & .testimonials-block-list {
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
-    transform: translateX(0); /* Initial position */
-
-      justify-content: center; /* Center the cards horizontally */
-      align-items: center; /* Center the cards vertically */
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(110%);
+    justify-content: center;
+    align-items: center;
 
     & .testimonials-block-card {
-      flex: 0 0 80%; /* Each card occupies the full width of the container */
+      flex: 0 0 53%;
       box-sizing: border-box;
-      width: clamp(20.625rem, 27.327vw + 13.281rem, 37.875rem);
-      //margin: 0 auto;
-      //gap
+      width: clamp(330px, 27.327vw + 13.281rem, 606px);
+      margin-left: 50px;
 
       & .bubble {
         position: relative;
+        max-width: 606px;
 
         & .testimonial {
           @include tools.size-line-height(1.125rem);
@@ -32,8 +31,8 @@
           border: 1px solid tools.$color-accent;
           border-radius: 45px;
           position: absolute;
-          top: clamp(1.875rem, 5.347vw + 0.438rem, 5.25rem);
-          padding: clamp(1.875rem, 2.178vw + 1.29rem, 3.25rem);
+          top: clamp(30px, 5.347vw + 0.438rem, 84px);
+          padding: clamp(30px, 2.178vw + 1.29rem, 52px);
 
           &:before {
             position: absolute;
@@ -52,7 +51,7 @@
         & .testimonial-person {
           position: absolute;
           //bottom: ;
-          top: clamp(23.563rem, -0.693vw + 23.749rem, 23.125rem);
+          top: clamp(390px, -0.693vw + 23.749rem, 370px);
           left: 80px;
 
           & .title {
@@ -74,11 +73,44 @@
 
   & .testimonials-block-navigation {
     position: absolute;
-    bottom: clamp(3.75rem, 0.792vw + 3.537rem, 4.25rem);
+    bottom: clamp(60px, 0.792vw + 3.537rem, 68px);
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 clamp(30px, 31.188vw - 6.507rem, 345px);
+
+    & button {
+      background: none;
+
+      &:hover {
+        opacity: 30%;
+      }
+    }
+
+    & .radio-buttons {
+      gap: 19px;
+      display: flex;
+
+      & input[type="radio"] {
+        //display: none;
+        appearance: none;
+        outline: none;
+
+        &:checked {
+          //background-image: url("../../icons/testimonials-radio-button-active.svg");
+          content: url("../../icons/testimonials-radio-button-active.svg");
+        }
+
+        &:before {
+          content: "";
+          background-image: url("../../icons/testimonials-radio-button.svg");
+          display: block;
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
   }
 }
 

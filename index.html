@@ -8,15 +8,16 @@
 </head>
 <body>
 <div class="wrapper">
+
   <div class="main-wrapper">
     <header>
-  <span>
+  <span class="logotype-dark">
     <a href="#">
     <img src="icons/logo-icon.svg" alt="logo Positivus">
     </a>
   </span>
-      <nav>
-        <ul>
+      <nav class="desktop-menu">
+        <ul class="menu-items">
           <li><a href="#">About us</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#">Use Cases</a></li>
@@ -25,37 +26,84 @@
           <button>Request a quote</button>
         </ul>
       </nav>
+
+      <nav class="mobile-menu">
+        <input id="menu-toggle" type="checkbox">
+        <label class="menu-btn" for="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <ul class="menu-items">
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Use Cases</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Blog</a></li>
+          <li>
+            <button>Request a quote</button>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <main>
       <div class="introduction">
-        <h1>
+        <h1 class="introduction-title">
           Navigating the digital landscape for success
         </h1>
-        <p>
+
+        <div class="main-illustration">
+          <img src="images/header-illustration.svg">
+        </div>
+
+        <p class="introduction-description">
           Our digital marketing agency helps businesses grow and succeed online through a range of services including
           SEO,
           PPC, social media marketing, and content creation.
         </p>
 
         <!--it must be <a>-->
-        <button>
+        <a class="introduction-link" href="#">
           Book a consultation
-        </button>
+        </a>
 
       </div>
-      <div>
+      <div class="main-illustration">
         <img src="images/header-illustration.svg">
       </div>
     </main>
-    <div class="logotypes">
-      <img src="icons/amazon-icon.svg">
-      <img src="icons/dribbbel-icon.svg">
-      <img src="icons/hubspot-icon.svg">
-      <img src="icons/notion-icon.svg">
-      <img src="icons/netflix-icon.svg">
-      <img src="icons/zoom-icon.svg">
+
+    <!--    <div class="logotypes">-->
+    <!--      <img src="icons/amazon-icon.svg">-->
+    <!--      <img src="icons/dribbbel-icon.svg">-->
+    <!--      <img src="icons/hubspot-icon.svg">-->
+    <!--      <img src="icons/notion-icon.svg">-->
+    <!--      <img src="icons/netflix-icon.svg">-->
+    <!--      <img src="icons/zoom-icon.svg">-->
+    <!--    </div>-->
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <div class="item"><img src="icons/amazon-icon.svg" alt="Amazon"></div>
+        <div class="item"><img src="icons/dribbbel-icon.svg" alt="Dribbbel"></div>
+        <div class="item"><img src="icons/hubspot-icon.svg" alt="Hubspot"></div>
+        <div class="item"><img src="icons/notion-icon.svg" alt="Notion"></div>
+        <div class="item"><img src="icons/netflix-icon.svg" alt="Netflix"></div>
+        <div class="item"><img src="icons/zoom-icon.svg" alt="Zoom"></div>
+        <!-- Duplicate items for seamless looping -->
+        <div class="item"><img src="icons/amazon-icon.svg" alt="Amazon"></div>
+        <div class="item"><img src="icons/dribbbel-icon.svg" alt="Dribbbel"></div>
+        <div class="item"><img src="icons/hubspot-icon.svg" alt="Hubspot"></div>
+        <div class="item"><img src="icons/notion-icon.svg" alt="Notion"></div>
+        <div class="item"><img src="icons/netflix-icon.svg" alt="Netflix"></div>
+        <div class="item"><img src="icons/zoom-icon.svg" alt="Zoom"></div>
+        <div class="item"><img src="icons/amazon-icon.svg" alt="Amazon"></div>
+        <div class="item"><img src="icons/dribbbel-icon.svg" alt="Dribbbel"></div>
+        <div class="item"><img src="icons/hubspot-icon.svg" alt="Hubspot"></div>
+      </div>
     </div>
+
   </div>
 
   <!--Services-->
@@ -77,20 +125,13 @@
         </h3>
 
         <!--it must be <a>-->
-        <a href="#">
-          <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20.5" cy="20.5" r="20.5" fill="#191A23"/>
-            <path d="M11.25 24.701C10.5326 25.1152 10.2867 26.0326 10.701 26.75C11.1152 27.4674 12.0326 27.7133 12.75
-        27.299L11.25 24.701ZM30.7694 16.3882C30.9838 15.588 30.5089 14.7655 29.7087 14.5511L16.6687 11.0571C15.8685 10.8426 15.046
-        11.3175 14.8316 12.1177C14.6172 12.9179 15.0921 13.7404 15.8923 13.9548L27.4834 17.0607L24.3776 28.6518C24.1631
-        29.452 24.638 30.2745 25.4382 30.4889C26.2384 30.7033 27.0609 30.2284 27.2753 29.4282L30.7694 16.3882ZM12.75 27.299L30.0705
-        17.299L28.5705 14.701L11.25 24.701L12.75 27.299Z" fill="#B9FF66"/>
-          </svg>
+        <a class="service-block-link" href="#">
+          <img src="icons/services-arrow-green.svg">
           <span>Learn more</span>
         </a>
-      </div>
-      <div class="illustration">
-        <img src="images/search-engine-optimization.svg">
+        <div class="illustration">
+          <img src="images/search-engine-optimization.svg">
+        </div>
       </div>
     </div>
 
@@ -100,20 +141,13 @@
           <span>Pay-per-click</span>
           <span>advertising</span>
         </h3>
-        <a href="#">
-          <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20.5" cy="20.5" r="20.5" fill="#191A23"/>
-            <path d="M11.25 24.701C10.5326 25.1152 10.2867 26.0326 10.701 26.75C11.1152 27.4674 12.0326 27.7133 12.75
-        27.299L11.25 24.701ZM30.7694 16.3882C30.9838 15.588 30.5089 14.7655 29.7087 14.5511L16.6687 11.0571C15.8685 10.8426 15.046
-        11.3175 14.8316 12.1177C14.6172 12.9179 15.0921 13.7404 15.8923 13.9548L27.4834 17.0607L24.3776 28.6518C24.1631
-        29.452 24.638 30.2745 25.4382 30.4889C26.2384 30.7033 27.0609 30.2284 27.2753 29.4282L30.7694 16.3882ZM12.75 27.299L30.0705
-        17.299L28.5705 14.701L11.25 24.701L12.75 27.299Z" fill="#B9FF66"/>
-          </svg>
+        <a class="service-block-link" href="#">
+          <img src="icons/services-arrow-green.svg">
           <span>Learn more</span>
         </a>
-      </div>
-      <div class="illustration">
-        <img src="images/pay-per-click-advertising.svg">
+        <div class="illustration">
+          <img src="images/pay-per-click-advertising.svg">
+        </div>
       </div>
     </div>
 
@@ -123,20 +157,13 @@
           <span>Social Media</span>
           <span>Marketing</span>
         </h3>
-        <a href="#">
-          <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20.5" cy="20.5" r="20.5" fill="white"/>
-            <path d="M11.25 24.701C10.5326 25.1152 10.2867 26.0326 10.701 26.75C11.1152 27.4674 12.0326 27.7133 12.75
-        27.299L11.25 24.701ZM30.7694 16.3882C30.9838 15.588 30.5089 14.7655 29.7087 14.5511L16.6687 11.0571C15.8685 10.8426 15.046
-        11.3175 14.8316 12.1177C14.6172 12.9179 15.0921 13.7404 15.8923 13.9548L27.4834 17.0607L24.3776 28.6518C24.1631
-        29.452 24.638 30.2745 25.4382 30.4889C26.2384 30.7033 27.0609 30.2284 27.2753 29.4282L30.7694 16.3882ZM12.75 27.299L30.0705
-        17.299L28.5705 14.701L11.25 24.701L12.75 27.299Z" fill="black"/>
-          </svg>
+        <a class="service-block-link" href="#">
+          <img src="icons/services-arrow-black.svg">
           <span class="special">Learn more</span>
         </a>
-      </div>
-      <div class="illustration">
-        <img src="images/social-media-marketing.svg">
+        <div class="illustration">
+          <img src="images/social-media-marketing.svg">
+        </div>
       </div>
     </div>
 
@@ -146,20 +173,13 @@
           <span>Email</span>
           <span>Marketing</span>
         </h3>
-        <a href="#">
-          <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20.5" cy="20.5" r="20.5" fill="#191A23"/>
-            <path d="M11.25 24.701C10.5326 25.1152 10.2867 26.0326 10.701 26.75C11.1152 27.4674 12.0326 27.7133 12.75
-        27.299L11.25 24.701ZM30.7694 16.3882C30.9838 15.588 30.5089 14.7655 29.7087 14.5511L16.6687 11.0571C15.8685 10.8426 15.046
-        11.3175 14.8316 12.1177C14.6172 12.9179 15.0921 13.7404 15.8923 13.9548L27.4834 17.0607L24.3776 28.6518C24.1631
-        29.452 24.638 30.2745 25.4382 30.4889C26.2384 30.7033 27.0609 30.2284 27.2753 29.4282L30.7694 16.3882ZM12.75 27.299L30.0705
-        17.299L28.5705 14.701L11.25 24.701L12.75 27.299Z" fill="#B9FF66"/>
-          </svg>
+        <a class="service-block-link" href="#">
+          <img src="icons/services-arrow-green.svg">
           <span>Learn more</span>
         </a>
-      </div>
-      <div class="illustration">
-        <img src="images/email-marketing.svg">
+        <div class="illustration">
+          <img src="images/email-marketing.svg">
+        </div>
       </div>
     </div>
 
@@ -169,20 +189,13 @@
           <span>Content</span>
           <span>Creation</span>
         </h3>
-        <a href="#">
-          <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20.5" cy="20.5" r="20.5" fill="#191A23"/>
-            <path d="M11.25 24.701C10.5326 25.1152 10.2867 26.0326 10.701 26.75C11.1152 27.4674 12.0326 27.7133 12.75
-        27.299L11.25 24.701ZM30.7694 16.3882C30.9838 15.588 30.5089 14.7655 29.7087 14.5511L16.6687 11.0571C15.8685 10.8426 15.046
-        11.3175 14.8316 12.1177C14.6172 12.9179 15.0921 13.7404 15.8923 13.9548L27.4834 17.0607L24.3776 28.6518C24.1631
-        29.452 24.638 30.2745 25.4382 30.4889C26.2384 30.7033 27.0609 30.2284 27.2753 29.4282L30.7694 16.3882ZM12.75 27.299L30.0705
-        17.299L28.5705 14.701L11.25 24.701L12.75 27.299Z" fill="#B9FF66"/>
-          </svg>
+        <a class="service-block-link" href="#">
+          <img src="icons/services-arrow-green.svg">
           <span>Learn more</span>
         </a>
-      </div>
-      <div class="illustration">
-        <img src="images/content-creation.svg">
+        <div class="illustration">
+          <img src="images/content-creation.svg">
+        </div>
       </div>
     </div>
 
@@ -192,28 +205,22 @@
           <span>Analytics and </span>
           <span>Tracking</span>
         </h3>
-        <a href="#">
-          <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20.5" cy="20.5" r="20.5" fill="white"/>
-            <path d="M11.25 24.701C10.5326 25.1152 10.2867 26.0326 10.701 26.75C11.1152 27.4674 12.0326 27.7133 12.75
-        27.299L11.25 24.701ZM30.7694 16.3882C30.9838 15.588 30.5089 14.7655 29.7087 14.5511L16.6687 11.0571C15.8685 10.8426 15.046
-        11.3175 14.8316 12.1177C14.6172 12.9179 15.0921 13.7404 15.8923 13.9548L27.4834 17.0607L24.3776 28.6518C24.1631
-        29.452 24.638 30.2745 25.4382 30.4889C26.2384 30.7033 27.0609 30.2284 27.2753 29.4282L30.7694 16.3882ZM12.75 27.299L30.0705
-        17.299L28.5705 14.701L11.25 24.701L12.75 27.299Z" fill="black"/>
-          </svg>
+        <a class="service-block-link" href="#">
+          <img src="icons/services-arrow-black.svg">
           <span class="special">Learn more</span>
         </a>
-      </div>
-      <div class="illustration">
-        <img src="images/analytics-and-tracking.svg">
+        <div class="illustration">
+          <img src="images/analytics-and-tracking.svg">
+        </div>
       </div>
     </div>
 
   </div>
 
+  <!--CTA-->
   <article>
-    <section>
-      <div>
+    <div class="cta-block">
+      <section class="cta-block-body">
         <h3>
           Let’s make things happen
         </h3>
@@ -222,8 +229,8 @@
           succeed online.
         </p>
         <button>Get your free proposal</button>
-      </div>
-    </section>
+      </section>
+    </div>
     <img src="images/cta-illustration.svg">
   </article>
 
@@ -235,53 +242,55 @@
     </p>
   </section>
 
-  <div class="case-studies-block">
-    <div>
-      <p class="block-description">
-        For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website
-        traffic and a 25% increase in sales.
-      </p>
-      <a href="#" class="block-link">
-        <span>Learn more</span>
+  <div class="case-wrapper">
+    <div class="case-studies-block">
+      <div class="case-block-card initial">
+        <p class="block-description">
+          For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website
+          traffic and a 25% increase in sales.
+        </p>
+        <a href="#" class="block-link">
+          <span>Learn more</span>
 
-        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.25 13.701C0.532561 14.1152 0.286748 15.0326 0.700962 15.75C1.11518 16.4674 2.03256 16.7133 2.75 16.299L1.25 13.701ZM20.7694 5.38823C20.9838 4.58803 20.5089 3.76552 19.7087 3.55111L6.66874 0.0570541C5.86854 -0.157359 5.04603 0.317515 4.83162 1.11771C4.61721 1.91791 5.09208 2.74042 5.89228 2.95483L17.4834 6.06066L14.3776 17.6518C14.1631 18.452 14.638 19.2745 15.4382 19.4889C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38823ZM2.75 16.299L20.0705 6.29904L18.5705 3.70096L1.25 13.701L2.75 16.299Z"
-                fill="#B9FF66"/>
-        </svg>
-      </a>
-    </div>
-    <hr>
-    <div>
-      <p class="block-description">
-        For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords
-        and a 200% increase in organic traffic.
-      </p>
-      <a href="#" class="block-link">
-        <span>Learn more</span>
+          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.25 13.701C0.532561 14.1152 0.286748 15.0326 0.700962 15.75C1.11518 16.4674 2.03256 16.7133 2.75 16.299L1.25 13.701ZM20.7694 5.38823C20.9838 4.58803 20.5089 3.76552 19.7087 3.55111L6.66874 0.0570541C5.86854 -0.157359 5.04603 0.317515 4.83162 1.11771C4.61721 1.91791 5.09208 2.74042 5.89228 2.95483L17.4834 6.06066L14.3776 17.6518C14.1631 18.452 14.638 19.2745 15.4382 19.4889C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38823ZM2.75 16.299L20.0705 6.29904L18.5705 3.70096L1.25 13.701L2.75 16.299Z"
+                  fill="#B9FF66"/>
+          </svg>
+        </a>
+      </div>
+      <hr>
+      <div class="case-block-card middle">
+        <p class="block-description">
+          For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key
+          keywords
+          and a 200% increase in organic traffic.
+        </p>
+        <a href="#" class="block-link">
+          <span>Learn more</span>
 
-        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.25 13.701C0.532561 14.1152 0.286748 15.0326 0.700962 15.75C1.11518 16.4674 2.03256 16.7133 2.75 16.299L1.25 13.701ZM20.7694 5.38823C20.9838 4.58803 20.5089 3.76552 19.7087 3.55111L6.66874 0.0570541C5.86854 -0.157359 5.04603 0.317515 4.83162 1.11771C4.61721 1.91791 5.09208 2.74042 5.89228 2.95483L17.4834 6.06066L14.3776 17.6518C14.1631 18.452 14.638 19.2745 15.4382 19.4889C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38823ZM2.75 16.299L20.0705 6.29904L18.5705 3.70096L1.25 13.701L2.75 16.299Z"
-                fill="#B9FF66"/>
-        </svg>
-      </a>
-    </div>
-    <hr>
-    <div>
-      <p class="block-description">
-        For a national retail chain, we created a social media marketing campaign that increased followers by 25% and
-        generated a 20% increase in online sales.
-      </p>
-      <a href="#" class="block-link">
-        <span>Learn more</span>
+          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.25 13.701C0.532561 14.1152 0.286748 15.0326 0.700962 15.75C1.11518 16.4674 2.03256 16.7133 2.75 16.299L1.25 13.701ZM20.7694 5.38823C20.9838 4.58803 20.5089 3.76552 19.7087 3.55111L6.66874 0.0570541C5.86854 -0.157359 5.04603 0.317515 4.83162 1.11771C4.61721 1.91791 5.09208 2.74042 5.89228 2.95483L17.4834 6.06066L14.3776 17.6518C14.1631 18.452 14.638 19.2745 15.4382 19.4889C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38823ZM2.75 16.299L20.0705 6.29904L18.5705 3.70096L1.25 13.701L2.75 16.299Z"
+                  fill="#B9FF66"/>
+          </svg>
+        </a>
+      </div>
+      <hr>
+      <div class="case-block-card final">
+        <p class="block-description">
+          For a national retail chain, we created a social media marketing campaign that increased followers by 25% and
+          generated a 20% increase in online sales.
+        </p>
+        <a href="#" class="block-link">
+          <span>Learn more</span>
 
-        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1.25 13.701C0.532561 14.1152 0.286748 15.0326 0.700962 15.75C1.11518 16.4674 2.03256 16.7133 2.75 16.299L1.25 13.701ZM20.7694 5.38823C20.9838 4.58803 20.5089 3.76552 19.7087 3.55111L6.66874 0.0570541C5.86854 -0.157359 5.04603 0.317515 4.83162 1.11771C4.61721 1.91791 5.09208 2.74042 5.89228 2.95483L17.4834 6.06066L14.3776 17.6518C14.1631 18.452 14.638 19.2745 15.4382 19.4889C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38823ZM2.75 16.299L20.0705 6.29904L18.5705 3.70096L1.25 13.701L2.75 16.299Z"
-                fill="#B9FF66"/>
-        </svg>
-      </a>
+          <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.25 13.701C0.532561 14.1152 0.286748 15.0326 0.700962 15.75C1.11518 16.4674 2.03256 16.7133 2.75 16.299L1.25 13.701ZM20.7694 5.38823C20.9838 4.58803 20.5089 3.76552 19.7087 3.55111L6.66874 0.0570541C5.86854 -0.157359 5.04603 0.317515 4.83162 1.11771C4.61721 1.91791 5.09208 2.74042 5.89228 2.95483L17.4834 6.06066L14.3776 17.6518C14.1631 18.452 14.638 19.2745 15.4382 19.4889C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38823ZM2.75 16.299L20.0705 6.29904L18.5705 3.70096L1.25 13.701L2.75 16.299Z"
+                  fill="#B9FF66"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
-
   <!--Our Working Process-->
   <section class="subheading">
     <h2>Our Working Process</h2>
@@ -631,6 +640,14 @@
       <!--      <input type="radio">-->
       <!--      </div>-->
 
+      <div class="radio-buttons">
+        <input type="radio" name="slider" id="radio-0" checked>
+        <input type="radio" name="slider" id="radio-1">
+        <input type="radio" name="slider" id="radio-2">
+        <input type="radio" name="slider" id="radio-3">
+        <input type="radio" name="slider" id="radio-4">
+      </div>
+
       <button class="next"><img src="icons/arrow-right.svg"></button>
     </div>
 
@@ -659,7 +676,8 @@
         <label for="email">Email*</label>
         <input type="email" placeholder="Email" id="email" autocomplete="on" required>
         <label for="message">Message*</label>
-        <input type="text" placeholder="Message" id="message" required>
+        <!--<input type="text" placeholder="Message" id="message" required>-->
+        <textarea placeholder="Message" id="message" required></textarea>
       </div>
 
       <button>Send Message</button>
@@ -668,7 +686,7 @@
   </div>
 
   <footer>
-    <img class="logotype" src="icons/inverted-logo-icon.svg">
+    <img class="logotype-light" src="icons/inverted-logo-icon.svg">
     <ul>
       <li class="footer-link"><a href="#">About us</a></li>
       <li class="footer-link"><a href="#">Services</a></li>
@@ -676,27 +694,27 @@
       <li class="footer-link"><a href="#">Pricing</a></li>
       <li class="footer-link"><a href="#">Blog</a></li>
     </ul>
-    <div class="footer-social-icons">
-      <img src="icons/in-footer-icon.svg">
-      <img src="icons/f-footer-icon.svg">
-      <img src="icons/x-footer-icon.svg">
-    </div>
+
     <div class="footer-block-contact">
-    <section class="contact-info">
-      <h4>Contact us:</h4>
-      <p>Email: info@positivus.com</p>
-      <p>Phone: 555-567-8901</p>
-      <p>Address: 1234 Main St <br> Moonstone City, Stardust State 12345</p>
-    </section>
+      <section class="contact-info">
+        <h4>Contact us:</h4>
+        <p>Email: info@positivus.com</p>
+        <p>Phone: 555-567-8901</p>
+        <p>Address: 1234 Main St <br> Moonstone City, Stardust State 12345</p>
+      </section>
       <form>
         <input type="email" placeholder="Email" autocomplete="on" required>
         <button>Subscribe to news</button>
       </form>
     </div>
-
-    <div>
+    <div class="footer-social-icons">
+      <img src="icons/in-footer-icon.svg">
+      <img src="icons/f-footer-icon.svg">
+      <img src="icons/x-footer-icon.svg">
+    </div>
     <hr>
-    <p>© 2023 Positivus. All Rights Reserved.</p>
+    <div class="footer-block-rights">
+      <p>© 2023 Positivus. All Rights Reserved.</p>
       <p><a>Privacy Policy</a></p>
     </div>
   </footer>

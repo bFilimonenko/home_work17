@@ -4,6 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
+  justify-content: center;
 
   & .team-block-card {
 
@@ -11,7 +12,7 @@
     border: 1px solid tools.$color-dark;
     border-radius: 45px;
     box-shadow: 0 5px 0 0 tools.$color-dark;
-    max-width: 387px;
+    max-width: 385px;
 
     & .card-elem {
       display: flex;
@@ -27,11 +28,17 @@
         & h4 {
           font-family: "Space Grotesk Medium";
           @include tools.size-line-height(1.25rem);
-
+          @media (max-width: 1024px) {
+            @include tools.size-line-height(1.125rem);
+          }
         }
 
         & p {
           @include tools.size-line-height(1.25rem);
+          @media (max-width: 1024px) {
+            font-size: 1rem;
+            line-height: 1.5rem;
+          }
         }
       }
 
@@ -51,6 +58,10 @@
 
   & p {
     @include tools.size-line-height(1.25rem);
+    @media (max-width: 1024px) {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
   }
 }
 

@@ -2,27 +2,34 @@
 
 article {
   display: flex;
+  position: relative;
 
-
-  & section {
+  & .cta-block {
     background-color: tools.$color-light;
     border-radius: 45px;
-    padding: 60px;
+    padding: clamp(50px, 0.99vw + 2.859rem, 60px);
     width: 100%;
     margin: 23.5px 0;
 
-    & div {
-      max-width: clamp(18.125rem, 20.588vw + 12.592rem, 31.25rem);
+    & .cta-block-body {
+      max-width: clamp(290px, 20.588vw + 12.592rem, 500px);
 
       & h3 {
         font-family: "Space Grotesk Medium";
         @include tools.size-line-height(1.875rem);
-        margin-bottom: 26px;
+        margin-bottom: clamp(20px, 0.594vw + 1.09rem, 26px);
+        @media (max-width: 1024px) {
+          @include tools.size-line-height(1.625rem);
+        }
       }
 
       & p {
         @include tools.size-line-height(1.125rem);
-        margin-bottom: 26px;
+        margin-bottom: clamp(20px, 0.594vw + 1.09rem, 26px);
+        @media (max-width: 1024px) {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
       }
 
       & button {
@@ -37,6 +44,9 @@ article {
 
   & img {
     position: absolute;
-    right: 100px;
+    right: clamp(-8.125rem, 31.25vw - 28.125rem, 0rem);
+    @media (max-width: 1024px) {
+      display: none;
+    }
   }
 }

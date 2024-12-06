@@ -1,35 +1,70 @@
 @use "../tools";
 
-.case-studies-block {
-  background-color: tools.$color-dark;
-  border-radius: 45px;
-  display: flex;
-  padding: 60px 70px;
 
-  & hr {
-    border: 0.5px solid tools.$color-base;
-    height: 186px;
-    //width: 1px;
-    margin: auto 64px;
-  }
+.case-wrapper {
+  overflow-x: scroll;
 
-  //& .special-elem {
-  //  border-left: 1px solid tools.$color-base;
-  //  border-right: 1px solid tools.$color-base;
-  //}
-
-  & .block-description {
-    color: tools.$color-base;
-    @include tools.size-line-height(1.125rem);
-    padding-bottom: 20px;
-  }
-
-  & .block-link {
-    color: tools.$color-accent;
+  & .case-studies-block {
+    background-color: tools.$color-dark;
+    border-radius: 45px;
     display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    //padding: 60px 70px;
+    @media (max-width: 1280px) {
+      background: none;
+      gap: clamp(1px, -2.353vw + 1.882rem, 20px);
+      min-width: 1130px;
+
+    }
+
+    & hr {
+      border: 0.5px solid tools.$color-base;
+      min-height: 186px;
+      margin: clamp(0px, 43.75vw - 35rem, 70px) 0;
+      //margin: auto 64px;
+      //width: 1px;
+      @media (max-width: 1280px) {
+        display: none;
+      }
+    }
+
+    & .initial {
+      padding: clamp(42px, 2.772vw + 1.88rem, 70px) clamp(50px, 1.386vw + 2.752rem, 64px) clamp(42px, 2.772vw + 1.88rem, 70px) clamp(50px, 0.99vw + 2.859rem, 60px);
+      border-radius: 45px clamp(0px, -17.578vw + 14.063rem, 45px) clamp(0px, -17.578vw + 14.063rem, 45px) 45px;
+    }
+
+    & .middle {
+      padding: clamp(42px, 2.772vw + 1.88rem, 70px) clamp(50px, 1.386vw + 2.752rem, 64px);
+      border-radius: clamp(0px, -17.578vw + 14.063rem, 45px);
+    }
+
+    & .final {
+      padding: clamp(42px, 2.772vw + 1.88rem, 70px) clamp(50px, 0.99vw + 2.859rem, 60px) clamp(42px, 2.772vw + 1.88rem, 70px) clamp(50px, 1.386vw + 2.752rem, 64px);
+      border-radius: clamp(0px, -17.578vw + 14.063rem, 45px) 45px 45px clamp(0px, -17.578vw + 14.063rem, 45px);
+    }
+
+
+    & .case-block-card {
+      background-color: tools.$color-dark;
+
+
+      & .block-description {
+        color: tools.$color-base;
+        @include tools.size-line-height(1.125rem);
+        padding-bottom: 20px;
+        @media (max-width: 1024px) {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+      }
+
+      & .block-link {
+        color: tools.$color-accent;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+    }
   }
 }

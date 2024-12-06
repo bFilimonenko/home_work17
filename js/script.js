@@ -19,55 +19,55 @@ for (i = 0; i < acc.length; i++) {
 
 
 
-//
-const slider = document.querySelector('.testimonials-block-list');
-const next = document.querySelector('.next');
-const prev = document.querySelector('.prev');
-const cards = document.querySelectorAll('.testimonials-block-card');
-//
-let currentSlide = -1;
-slider.style.transform = `translateX(80%)`;
-//
-next.addEventListener('click', function () {
-  // Move to the next slide
-  currentSlide = (currentSlide + 1) % cards.length;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const testimonialsList = document.querySelector(".testimonials-block-list");
+  const prevButton = document.querySelector(".prev");
+  const nextButton = document.querySelector(".next");
+  const cards = document.querySelectorAll(".testimonials-block-card");
+  const radioButtons = document.querySelectorAll(".radio-buttons input");
+
+  const startOffset = 110; // Initial offset for the first element
+  const stepOffset = 57;// Offset step for each card
+
+  let currentIndex = 0; // Start with the first card
+
+  // Update slider position
+  const updateSlider = () => {
+    testimonialsList.style.transform = `translateX(${startOffset - currentIndex * stepOffset}%)`;
+    testimonialsList.style.transition = "transform 0.5s ease-in-out"; // Smooth transition
+    updateRadioButtons();
+  };
+
+  // Update radio buttons to reflect the active card
+  const updateRadioButtons = () => {
+    radioButtons.forEach((radio, index) => {
+      radio.checked = index === currentIndex;
+    });
+  };
+
+  // Next button functionality
+  nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % cards.length; // Loop back to start
+    updateSlider();
+  });
+
+  // Previous button functionality
+  prevButton.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length; // Loop back to end
+    updateSlider();
+  });
+
+  // Radio button functionality
+  radioButtons.forEach((radio, index) => {
+    radio.addEventListener("change", () => {
+      currentIndex = index; // Update the index to match the selected radio
+      updateSlider();
+    });
+  });
+
+  // Initialize the slider
   updateSlider();
 });
-//
-prev.addEventListener('click', function () {
-  // Move to the previous slide
-  currentSlide = (currentSlide - 1 + cards.length) % cards.length;
-  updateSlider();
-});
-//
-function updateSlider() {
-  // Adjust the translateX property to show the current slide
-  slider.style.transform = `translateX(-${currentSlide * 80}%)`;
-}
-//
-// const slider = document.querySelector('.testimonials-slider');
-// const next = document.querySelector('.next');
-// const prev = document.querySelector('.prev');
-// const cards = document.querySelectorAll('.testimonials-block-card');
-//
-// // Define gap percentage
-// const gapPercentage = 10; // Matches the gap in the CSS
-// let currentSlide = 0;
-//
-// next.addEventListener('click', function () {
-//   // Move to the next slide
-//   currentSlide = (currentSlide + 1) % cards.length;
-//   updateSlider();
-// });
-//
-// prev.addEventListener('click', function () {
-//   // Move to the previous slide
-//   currentSlide = (currentSlide - 1 + cards.length) % cards.length;
-//   updateSlider();
-// });
-//
-// function updateSlider() {
-//   // Adjust the translateX property considering the gap
-//   slider.style.transform = `translateX(-${(currentSlide * (80 + gapPercentage))}%)`;
-// }
-//
+
+

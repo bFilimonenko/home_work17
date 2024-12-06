@@ -7,11 +7,12 @@
   & .process-block-card {
     display: flex;
     flex-direction: column;
-    padding: 41px 60px;
+    padding: clamp(30px, 1.089vw + 1.582rem, 41px) clamp(30px, 2.97vw + 1.077rem, 60px);
     background-color: tools.$color-light;
     border: 1px solid tools.$color-dark;
     border-radius: 45px;
     box-shadow: 0 5px 0 0 tools.$color-dark;
+    overflow: auto; //width
 
     & .card-header {
       display: flex;
@@ -19,24 +20,31 @@
 
       & .card-number {
         font-family: "Space Grotesk Medium";
-        font-size: clamp(1.875rem, 1.0767rem + 2.9703vw, 3.75rem);
-        line-height: 1.276;
+        @include tools.size-line-height(3.75rem);
+        @media (max-width: 1024px) {
+          @include tools.size-line-height(1.875rem);
+        }
       }
 
       & .card-title {
         font-family: "Space Grotesk Medium";
         @include tools.size-line-height(1.875rem);
         padding-left: 25px;
+        @media (max-width: 1024px) {
+          @include tools.size-line-height(1.125rem);
+        }
       }
     }
 
     & .accordion-button {
       position: absolute;
       align-self: end;
-      width: 58px;
-      height: 58px;
+      width: clamp(30px, 2.772vw + 1.13rem, 58px);
+      height:  clamp(30px, 2.772vw + 1.13rem, 58px);
+      margin: clamp(4px, 0.495vw + 0.117rem, 9.5px);
       border-radius: 30px;
       background-image: url("../../icons/plus-icon.svg");
+      background-size: contain;
     }
 
     & .accordion-button.active {
@@ -45,11 +53,13 @@
 
     & .accordion-description {
       display: none;
-      font-size: 1.125rem;
+      font-size: clamp(1rem, 0.9468rem + 0.198vw, 1.125rem);
+      overflow: hidden; //width
+
 
       & hr {
         border: 0.5px solid tools.$color-font;
-        width: clamp(20.75rem, 77.624vw - 0.111rem, 69.75rem);
+        width: clamp(332px, 77.624vw - 0.111rem, 1114px);
         margin: 30px auto;
       }
     }

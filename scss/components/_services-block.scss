@@ -3,18 +3,23 @@
 .services-block {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: clamp(4.375rem, 2.941vw + 3.585rem, 6.25rem);
+  gap: clamp(30px, 0.99vw + 1.609rem, 40px);
+  margin-bottom: clamp(70px, 2.941vw + 3.585rem, 100px);
 
   & .service-block-card {
     display: flex;
+    justify-content: center;
     align-items: center;
-    width: 600px;
-    height: 310px;
+    width: clamp(390px, 20.792vw + 18.787rem, 600px);
+    min-height: 310px;
     padding: 50px;
     border: 1px solid tools.$color-dark;
     border-radius: 45px;
     box-shadow: 0 5px 0 0 tools.$color-dark;
+
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      width: 47%;
+    }
 
     &.light {
       background-color: tools.$color-light;
@@ -33,18 +38,34 @@
     }
 
     & .content {
-      display: flex;
-      flex-direction: column;
+      //display: flex;
+      //flex-direction: column;
+      display: grid;
+      grid-template-areas:
+    "title illustration"
+    "link illustration";
+      @media (max-width: 1280px) {
+        grid-template-areas:
+        "title title"
+        "link illustration";
+        gap: 27px;
+      }
+
 
       & h3 {
+        grid-area: title;
         font-family: "Space Grotesk Medium";
         @include tools.size-line-height(1.875rem);
+        @media (max-width: 1280px) {
+          @include tools.size-line-height(1.625rem);
+        }
 
         &.accent span {
           background-color: tools.$color-accent;
           border-radius: 7px;
           padding: 0 7px;
         }
+
         &.base span {
           background-color: tools.$color-base;
           border-radius: 7px;
@@ -52,19 +73,42 @@
         }
       }
 
-      & a {
+      & a.service-block-link {
+        grid-area: link;
         margin-top: 93px;
+        //delete margin or clamp
         font-size: 1.25rem;
         line-height: 1.75rem;
         display: flex;
         align-items: center;
         gap: 15px;
         cursor: pointer;
+        align-self: end;
+
+        & span {
+          @media (max-width: 1280px) {
+            display: none;
+          }
+        }
+      }
+
+      & .illustration {
+        grid-area: illustration;
+        max-height: 210px;
+        //margin-left: 69px;
+        margin-left: clamp(4px, 40.625vw - 32.25rem, 69px);
+        //delete margin or clamp
+        align-self: center;
+        justify-self: end;
+
+        & img {
+          @media (max-width: 1024px) {
+            width: 100%;
+            max-height: 140px;
+          }
+        }
       }
     }
 
-    & .illustration {
-      margin-left: 69px;
-    }
   }
 }

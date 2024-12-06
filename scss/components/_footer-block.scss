@@ -1,32 +1,58 @@
 @use "../tools";
 
 footer {
+  //margin-top: 140px;
+  margin-top: clamp(140px, -4.752vw + 13.027rem, 188px);
   display: grid;
   background-color: tools.$color-dark;
   border-top-right-radius: 45px;
   border-top-left-radius: 45px;
-  padding-top: 50px;
-  padding-right: clamp(1.25rem, 3.96vw + 0.186rem, 3.75rem);
-  padding-left: clamp(1.25rem, 3.96vw + 0.186rem, 3.75rem);
+  padding: 50px clamp(1.25rem, 3.96vw + 0.186rem, 3.75rem) clamp(1.875rem, 1.98vw + 1.343rem, 3.125rem);
   grid-template-areas:
   "logo navigation social"
   "contact contact contact"
+  "line line line"
   "rights rights rights";
+
+  @media (max-width: 1280px) {
+    grid-template-areas:
+  "logo navigation navigation"
+  "contact contact social"
+  "contact contact social"
+  "line line line"
+  "rights rights rights";
+  }
+
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
   //grid-template-columns: max-content;
 
-  & .logotype {
+  & .logotype-light {
     grid-area: logo;
+    width: clamp(144px, 3.564vw + 8.042rem, 180px);
   }
 
   & ul {
     grid-area: navigation;
     display: flex;
     //gap: 40px;
-    gap: clamp(20px, 1.98vw + 0.718rem, 40px);
+    gap: clamp(15px,  6.01vw - 2.909rem, 40px);
+    justify-self: center;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
 
     & .footer-link {
       @include tools.size-line-height(1.125rem);
       color: tools.$color-base;
+      @media (max-width: 1024px) {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
 
       &:hover {
         text-decoration: underline;
@@ -34,21 +60,19 @@ footer {
     }
   }
 
-  & .footer-social-icons {
-    grid-area: social;
-    gap: 20px;
-    display: flex;
-
-    & img {
-      width: 30px;
-    }
-  }
 
   & .footer-block-contact {
     grid-area: contact;
     display: flex;
-    justify-content: space-between;
+    gap: clamp(40px, 71.25vw - 54.5rem, 154px);
     margin-top: clamp(2.313rem, 2.871vw + 1.541rem, 4.125rem);
+    @media (max-width: 1280px) {
+      align-items: center;
+      gap: clamp(30px, 39.063vw - 23.125rem, 130px);
+    }
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
 
     & .contact-info {
 
@@ -61,15 +85,23 @@ footer {
         padding-left: 7px;
         padding-right: 7px;
         margin-bottom: 27px;
+        @media (max-width: 1024px) {
+          @include tools.size-line-height(1.125rem);
+        }
       }
 
       & p {
         @include tools.size-line-height(1.125rem);
         color: tools.$color-base;
-        &:nth-of-type(1){
+        @media (max-width: 1024px) {
+          @include tools.size-line-height(1rem);
+        }
+
+        &:nth-of-type(1) {
           padding-bottom: clamp(15px, 0.495vw + 0.804rem, 20px);
         }
-        &:nth-of-type(2){
+
+        &:nth-of-type(2) {
           padding-bottom: clamp(15px, 0.495vw + 0.804rem, 20px);
 
         }
@@ -84,14 +116,24 @@ footer {
       border-radius: 14px;
       padding: clamp(1.875rem, 2.772vw + 1.13rem, 3.625rem) clamp(1.875rem, 0.99vw + 1.609rem, 2.5rem);
       max-width: 635px;
+      display: flex;
+      gap: 20px;
+      @media (max-width: 1280px) {
+        flex-direction: column;
+      }
 
       & input {
+        width: 285px;
         @include tools.size-line-height(1.125rem);
-        padding: 22px clamp(1.563rem, 0.99vw + 1.296rem, 2.188rem);
+        padding: 22px clamp(25px, 0.99vw + 1.296rem, 35px);
         color: tools.$color-base;
         background: none;
         border: 1px solid tools.$color-base;
         border-radius: 14px;
+        @media (max-width: 1024px) {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
 
         &::placeholder {
           color: tools.$color-base;
@@ -99,25 +141,54 @@ footer {
       }
 
       & button {
-        @include tools.basic-button
+        @include tools.basic-button;
+        background-color: tools.$color-accent;
       }
     }
   }
 
-  & div {
-    grid-area: rights;
-
-    & hr {
-      //grid-area: line;
-      border: 0.5px solid tools.$color-base;
-      width: clamp(24.375rem, 72.277vw + 4.95rem, 70rem);
-      margin: 50px auto;
+  & .footer-social-icons {
+    grid-area: social;
+    gap: 20px;
+    display: flex;
+    justify-content: end;
+    @media (max-width: 1280px) {
+      flex-direction: column;
+      justify-content: center;
     }
+    @media (max-width: 1024px) {
+      flex-direction: row;
+    }
+
+    & img {
+      width: 30px;
+    }
+  }
+
+  & hr {
+    grid-area: line;
+    border: 0.5px solid tools.$color-base;
+    width: clamp(390px, 72.277vw + 4.95rem, 1120px);
+    margin: 50px auto;
+  }
+
+  & .footer-block-rights {
+    grid-area: rights;
+    display: flex;
+    gap: 40px;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+
 
     & p {
       font-size: 1.125rem;
       line-height: 28px;
       color: tools.$color-base;
+      @media (max-width: 1024px) {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
 
       & a:hover {
         text-decoration: underline;
