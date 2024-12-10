@@ -1,11 +1,9 @@
 const acc = document.querySelectorAll(".accordion-button");
-let i;
-console.log(acc);
 
 let special = document.querySelector(".current");
 special.style.display = "block";
 
-for (i = 0; i < acc.length; i++) {
+for (let i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.classList.toggle("active");
     const description = this.nextElementSibling;
@@ -17,9 +15,6 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const testimonialsList = document.querySelector(".testimonials-block-list");
   const prevButton = document.querySelector(".prev");
@@ -27,16 +22,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".testimonials-block-card");
   const radioButtons = document.querySelectorAll(".radio-buttons input");
 
-  const startOffset = 110; // Initial offset for the first element
-  const stepOffset = 57;// Offset step for each card
-
   let currentIndex = 0; // Start with the first card
+  let startOffset = 110; // Initial offset for the first element
+  let stepOffset = 57; // Offset step for each card
 
+  if (window.innerWidth <= 480) {
+    startOffset = 224;
+    stepOffset = 112;
+  }else if (window.innerWidth <= 768) {
+    startOffset = 210;
+    stepOffset = 105;
+  }
   // Update slider position
-  const updateSlider = () => {
+  const updateSlider = (startOffset, stepOffset) => {
     testimonialsList.style.transform = `translateX(${startOffset - currentIndex * stepOffset}%)`;
     testimonialsList.style.transition = "transform 0.5s ease-in-out"; // Smooth transition
     updateRadioButtons();
+    console.log(testimonialsList.style.transform);
   };
 
   // Update radio buttons to reflect the active card
@@ -49,25 +51,39 @@ document.addEventListener("DOMContentLoaded", () => {
   // Next button functionality
   nextButton.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % cards.length; // Loop back to start
-    updateSlider();
+    updateSlider(startOffset, stepOffset);
   });
 
   // Previous button functionality
   prevButton.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + cards.length) % cards.length; // Loop back to end
-    updateSlider();
+    updateSlider(startOffset, stepOffset);
   });
 
   // Radio button functionality
   radioButtons.forEach((radio, index) => {
     radio.addEventListener("change", () => {
       currentIndex = index; // Update the index to match the selected radio
-      updateSlider();
+      updateSlider(startOffset, stepOffset);
     });
   });
 
+  window.addEventListener("resize", function(event) {
+    if (window.innerWidth <= 480) {
+      startOffset = 224;
+      stepOffset = 112;
+    } else if (window.innerWidth <= 768) {
+      startOffset = 210;
+      stepOffset = 105;
+    } else {
+      startOffset = 110;
+      stepOffset = 57;
+    }
+    updateSlider(startOffset, stepOffset);
+  });
+
   // Initialize the slider
-  updateSlider();
+  updateSlider(startOffset, stepOffset);
 });
 
 

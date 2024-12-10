@@ -14,6 +14,13 @@
     box-shadow: 0 5px 0 0 tools.$color-dark;
     max-width: 385px;
 
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
     & .card-elem {
       display: flex;
       align-items: end;
@@ -51,8 +58,6 @@
 
   & hr {
     border: 0.5px solid tools.$color-font;
-    //height: 186px;
-    //width: 317px;
     margin: 28px auto;
   }
 
@@ -73,13 +78,13 @@
   & .team-button {
     @include tools.basic-button;
     align-self: flex-end;
-    padding: 20px 76px 20px 76px;
-    border-radius: 14px;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    padding: 20px 76px;
     border: none;
     background-color: tools.$color-dark;
     color: tools.$color-base;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
 }

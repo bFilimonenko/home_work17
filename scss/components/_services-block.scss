@@ -6,6 +6,10 @@
   gap: clamp(30px, 0.99vw + 1.609rem, 40px);
   margin-bottom: clamp(70px, 2.941vw + 3.585rem, 100px);
 
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
+
   & .service-block-card {
     display: flex;
     justify-content: center;
@@ -38,19 +42,16 @@
     }
 
     & .content {
-      //display: flex;
-      //flex-direction: column;
       display: grid;
       grid-template-areas:
-    "title illustration"
-    "link illustration";
+      "title illustration"
+      "link illustration";
       @media (max-width: 1280px) {
         grid-template-areas:
         "title title"
         "link illustration";
         gap: 27px;
       }
-
 
       & h3 {
         grid-area: title;
@@ -76,7 +77,6 @@
       & a.service-block-link {
         grid-area: link;
         margin-top: 93px;
-        //delete margin or clamp
         font-size: 1.25rem;
         line-height: 1.75rem;
         display: flex;
@@ -95,9 +95,7 @@
       & .illustration {
         grid-area: illustration;
         max-height: 210px;
-        //margin-left: 69px;
         margin-left: clamp(4px, 40.625vw - 32.25rem, 69px);
-        //delete margin or clamp
         align-self: center;
         justify-self: end;
 
@@ -109,6 +107,5 @@
         }
       }
     }
-
   }
 }

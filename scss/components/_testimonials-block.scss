@@ -13,12 +13,22 @@
     transform: translateX(110%);
     justify-content: center;
     align-items: center;
+    @media (max-width: 768px) {
+      transform: translateX(210%);
+    }
+    @media (max-width: 480px) {
+      transform: translateX(224%);
+
+    }
 
     & .testimonials-block-card {
       flex: 0 0 53%;
       box-sizing: border-box;
       width: clamp(330px, 27.327vw + 13.281rem, 606px);
-      margin-left: 50px;
+      margin: auto 30px;
+      @media (max-width: 768px) {
+        flex: 0 0 95%;
+      }
 
       & .bubble {
         position: relative;
@@ -33,6 +43,10 @@
           position: absolute;
           top: clamp(30px, 5.347vw + 0.438rem, 84px);
           padding: clamp(30px, 2.178vw + 1.29rem, 52px);
+          @media (max-width: 1024px) {
+            font-size: 1rem;
+            line-height: 1.5rem;
+          }
 
           &:before {
             position: absolute;
@@ -50,7 +64,6 @@
 
         & .testimonial-person {
           position: absolute;
-          //bottom: ;
           top: clamp(390px, -0.693vw + 23.749rem, 370px);
           left: 80px;
 
@@ -58,17 +71,22 @@
             font-family: "Space Grotesk Medium";
             @include tools.size-line-height(1.25rem);
             color: tools.$color-accent;
+            @media (max-width: 1024px) {
+              @include tools.size-line-height(1.125rem);
+            }
           }
 
           & .subtitle {
             @include tools.size-line-height(1.125rem);
             color: tools.$color-base;
+            @media (max-width: 1024px) {
+              font-size: 1rem;
+              line-height: 1.5rem;
+            }
           }
         }
       }
-
     }
-
   }
 
   & .testimonials-block-navigation {
@@ -113,68 +131,3 @@
     }
   }
 }
-
-//
-//.testimonials-container {
-//  position: relative;
-//  overflow: hidden;
-//  width: 100%; /* Set your desired width */
-//  height: 300px; /* Set your desired height */
-//}
-//
-//.testimonials-slider {
-//  display: flex;
-//  transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
-//  transform: translateX(0); /* Initial position */
-//}
-//
-//.testimonials-block-card {
-//  flex: 0 0 100%; /* Each card occupies the full width of the container */
-//  box-sizing: border-box;
-//  text-align: center;
-//  background: #f0f0f0; /* Example background */
-//  padding: 20px;
-//  font-size: 20px;
-//  line-height: 300px; /* Vertically center the text */
-//}
-//
-//<div class="testimonials-container">
-//<div class="testimonials-slider">
-//<div class="testimonials-block-card">Slide 1</div>
-//<div class="testimonials-block-card">Slide 2</div>
-//<div class="testimonials-block-card">Slide 3</div>
-//<!-- Add more slides if needed -->
-//</div>
-//</div>
-//<button class="prev">Previous</button>
-//<button class="next">Next</button>
-
-//
-//.testimonials-container {
-//  position: relative;
-//  overflow: hidden;
-//  width: 100%; /* Full width container */
-//  height: 300px; /* Adjust height as needed */
-//  display: flex; /* Use flexbox to center the slider */
-//  justify-content: center; /* Center the cards horizontally */
-//  align-items: center; /* Center the cards vertically */
-//}
-//
-//.testimonials-slider {
-//  display: flex;
-//  gap: 10%; /* Add spacing between slides */
-//  transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
-//  transform: translateX(0); /* Initial position */
-//}
-//
-//.testimonials-block-card {
-//  flex: 0 0 80%; /* Each card takes up 80% of the container width */
-//  box-sizing: border-box;
-//  text-align: center;
-//  background: #f0f0f0; /* Example background */
-//  padding: 20px;
-//  font-size: 20px;
-//  line-height: 300px; /* Vertically center the text */
-//  border-radius: 10px; /* Optional for rounded edges */
-//  margin: auto; /* Center horizontally */
-//}

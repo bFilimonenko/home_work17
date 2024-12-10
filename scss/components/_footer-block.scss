@@ -1,18 +1,21 @@
 @use "../tools";
 
 footer {
-  //margin-top: 140px;
-  margin-top: clamp(140px, -4.752vw + 13.027rem, 188px);
+  margin: clamp(140px, -4.752vw + 13.027rem, 188px) clamp(0px, 24.038vw - 15.385rem, 100px) 0;
   display: grid;
   background-color: tools.$color-dark;
-  border-top-right-radius: 45px;
-  border-top-left-radius: 45px;
-  padding: 50px clamp(1.25rem, 3.96vw + 0.186rem, 3.75rem) clamp(1.875rem, 1.98vw + 1.343rem, 3.125rem);
+  border-top-right-radius: clamp(0px, 10.817vw - 6.923rem, 45px);
+  border-top-left-radius: clamp(0px, 10.817vw - 6.923rem, 45px);
+  padding: 50px clamp(20px, 3.96vw + 0.186rem, 60px) clamp(30px, 1.98vw + 1.343rem, 50px);
   grid-template-areas:
   "logo navigation social"
   "contact contact contact"
   "line line line"
   "rights rights rights";
+
+  @media (min-width: 1440px) {
+    width: clamp(1240px, 100vw - 12.5rem, 1720px);
+  }
 
   @media (max-width: 1280px) {
     grid-template-areas:
@@ -28,8 +31,9 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
+    row-gap: 37px;
   }
-  //grid-template-columns: max-content;
 
   & .logotype-light {
     grid-area: logo;
@@ -40,7 +44,7 @@ footer {
     grid-area: navigation;
     display: flex;
     //gap: 40px;
-    gap: clamp(15px,  6.01vw - 2.909rem, 40px);
+    gap: clamp(15px, 6.01vw - 2.909rem, 40px);
     justify-self: center;
     @media (max-width: 1024px) {
       flex-direction: column;
@@ -65,13 +69,14 @@ footer {
     grid-area: contact;
     display: flex;
     gap: clamp(40px, 71.25vw - 54.5rem, 154px);
-    margin-top: clamp(2.313rem, 2.871vw + 1.541rem, 4.125rem);
+    margin-top: clamp(37px, 2.871vw + 1.541rem, 66px);
     @media (max-width: 1280px) {
       align-items: center;
       gap: clamp(30px, 39.063vw - 23.125rem, 130px);
     }
     @media (max-width: 1024px) {
       flex-direction: column;
+      margin: 0;
     }
 
     & .contact-info {
@@ -87,6 +92,7 @@ footer {
         margin-bottom: 27px;
         @media (max-width: 1024px) {
           @include tools.size-line-height(1.125rem);
+          margin-bottom: 37px;
         }
       }
 
@@ -106,15 +112,12 @@ footer {
 
         }
       }
-
-
     }
 
     & form {
-      //grid-area: form;
       background-color: #292a32;
       border-radius: 14px;
-      padding: clamp(1.875rem, 2.772vw + 1.13rem, 3.625rem) clamp(1.875rem, 0.99vw + 1.609rem, 2.5rem);
+      padding: clamp(30px, 2.772vw + 1.13rem, 58px) clamp(30px, 0.99vw + 1.609rem, 40px);
       max-width: 635px;
       display: flex;
       gap: 20px;
@@ -170,12 +173,15 @@ footer {
     border: 0.5px solid tools.$color-base;
     width: clamp(390px, 72.277vw + 4.95rem, 1120px);
     margin: 50px auto;
+    @media (max-width: 1024px) {
+      margin: 0 auto;
+    }
   }
 
   & .footer-block-rights {
     grid-area: rights;
     display: flex;
-    gap: 40px;
+    gap: clamp(15px, 2.475vw + 0.272rem, 40px);
     @media (max-width: 1024px) {
       flex-direction: column;
     }
@@ -195,5 +201,4 @@ footer {
       }
     }
   }
-
 }

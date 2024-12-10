@@ -83,11 +83,9 @@
       }
 
       & #message {
-        //margin-bottom: clamp(1.875rem, 13.663vw - 0.547rem, 7.5rem);
         height: clamp(132px, 5.743vw + 6.707rem, 190px);
         resize: none;
       }
-
     }
 
     & button {
@@ -96,10 +94,8 @@
       width: 100%;
       color: tools.$color-base;
       position: relative;
-      //top: clamp(40px, -5.952vw + 7.857rem, 80px);
-      top: clamp(2.5rem, -6.734vw + 6.81rem, 5rem);
+      top: clamp(40px, -6.734vw + 6.81rem, 80px);
     }
-
   }
 
   & img {

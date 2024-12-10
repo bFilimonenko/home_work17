@@ -8,7 +8,6 @@
     background-color: tools.$color-dark;
     border-radius: 45px;
     display: flex;
-    //padding: 60px 70px;
     @media (max-width: 1280px) {
       background: none;
       gap: clamp(1px, -2.353vw + 1.882rem, 20px);
@@ -20,8 +19,6 @@
       border: 0.5px solid tools.$color-base;
       min-height: 186px;
       margin: clamp(0px, 43.75vw - 35rem, 70px) 0;
-      //margin: auto 64px;
-      //width: 1px;
       @media (max-width: 1280px) {
         display: none;
       }
