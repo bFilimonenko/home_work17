@@ -5,10 +5,7 @@
   flex-wrap: wrap;
   gap: clamp(30px, 0.99vw + 1.609rem, 40px);
   margin-bottom: clamp(70px, 2.941vw + 3.585rem, 100px);
-
-  @media (max-width: 1024px) {
-    justify-content: center;
-  }
+  justify-content: center;
 
   & .service-block-card {
     display: flex;

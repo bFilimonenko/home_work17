@@ -1,3 +1,4 @@
+//process accordion
 const acc = document.querySelectorAll(".accordion-button");
 
 let special = document.querySelector(".current");
@@ -15,6 +16,7 @@ for (let i = 0; i < acc.length; i++) {
   });
 }
 
+//testimonials slider
 document.addEventListener("DOMContentLoaded", () => {
   const testimonialsList = document.querySelector(".testimonials-block-list");
   const prevButton = document.querySelector(".prev");
@@ -23,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const radioButtons = document.querySelectorAll(".radio-buttons input");
 
   let currentIndex = 0; // Start with the first card
-  let startOffset = 110; // Initial offset for the first element
-  let stepOffset = 57; // Offset step for each card
+  let startOffset = 95; // Initial offset for the first element
+  let stepOffset = 50; // Offset step for each card
 
   if (window.innerWidth <= 480) {
     startOffset = 224;
@@ -38,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
     testimonialsList.style.transform = `translateX(${startOffset - currentIndex * stepOffset}%)`;
     testimonialsList.style.transition = "transform 0.5s ease-in-out"; // Smooth transition
     updateRadioButtons();
-    console.log(testimonialsList.style.transform);
   };
 
   // Update radio buttons to reflect the active card
@@ -76,8 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
       startOffset = 210;
       stepOffset = 105;
     } else {
-      startOffset = 110;
-      stepOffset = 57;
+      startOffset = 95;
+      stepOffset = 50;
     }
     updateSlider(startOffset, stepOffset);
   });

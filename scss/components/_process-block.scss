@@ -43,12 +43,12 @@
       height:  clamp(30px, 2.772vw + 1.13rem, 58px);
       margin: clamp(4px, 0.495vw + 0.117rem, 9.5px);
       border-radius: 30px;
-      background-image: url("../../icons/plus-icon.svg");
+      background-image: url(/home_work17/icons/plus-icon.svg);
       background-size: contain;
     }
 
     & .accordion-button.active {
-      background-image: url("../../icons/minus-icon.svg");
+      background-image: url(/home_work17/icons/minus-icon.svg);
     }
 
     & .accordion-description {
